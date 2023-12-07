@@ -3,7 +3,7 @@
 // info@croquet.io
 
 export function init(Constants) {
-    Constants.AvatarNames = ["newwhite"];
+    Constants.AvatarNames = [ "newwhite", "madhatter", "marchhare", "queenofhearts", "cheshirecat", "alice"];
 
     Constants.UserBehaviorDirectory = "behaviors/default";
     Constants.UserBehaviorModules = [
@@ -23,6 +23,7 @@ export function init(Constants) {
                 placeholderSize: [400, 0.1, 400],
                 placeholderColor: 0xe0e0e0,
                 placeholderOffset: [0, 0, 0],
+                
             }
         },
         {
@@ -44,7 +45,7 @@ export function init(Constants) {
                 scale: [0.3097923676078309, 0.3097923676078309, 0.3097923676078309],    
                 rotation: [0, 0, 0, 1],    
                 layers: ["pointer"],    
-                name: "football.glb",    
+                name: "football",    
                 dataLocation: "3AfAAWSptWdApVOEeJGmftZ7flvIJivo6ppbWdAjldBMKTU1MTJ7bm4nKC0kMm80Mm8iMy4wNCQ1bygubjRucBQ7NCk0NA0VBBJxA3EOLws3Kwh3dAsuOAkwc24iLixvJiwgKC1vMTQgMik0cHNybywoIjMuNyQzMiRuJw8QcTYYKyktBTh5FBspMjMYDx4WDAcNCzJ5HgA1dTAmJRciJyUGDgJ4AG4lIDUgbnhyMzYycwYoIywTADYeHiwYGHgkOS8nExt4KQo7GzlydTgWNwUuKAomcSo",    
                 dataScale: [2.132073633812013, 2.132073633812013, 2.132073633812013],    
                 fileName: "football.glb",    

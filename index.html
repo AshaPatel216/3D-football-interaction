@@ -2,12 +2,87 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>Microverse</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>3D Football Movements</title>
   <link id="microverse-css" rel="stylesheet" href="./assets/css/microverse.css" />
-<script defer src="lib/index-46463b78.js"></script></head>
+  <script defer src="lib/index-46463b78.js"></script>
+
+  <style>
+    /* style.css */
+    #scoreboard {
+      margin: 8px 20px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      position: absolute;
+      z-index: 1;
+      top: 10px;
+      right: 60px;
+      background-color: rgba(0, 0, 0, 0.5);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .board.hide {
+      display: none;
+    }
+
+    .score-entry {
+      margin: 5px 0;
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .no-select {
+      position: relative;
+    }
+
+    body {
+      background-color: transparent !important;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+    table {
+      margin-top: 5px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  </style>
+</head>
 
 <body class="no-select">
+  <!-- Score board of all users -->
+  <div id="scoreboard">
+    <h4>Scoreboard</h1>
+      <div id="score-data">
+
+      </div>
+  </div>
+
+  <!-- Croquet added via CDN & reference of its js file which contains a logic and view of scoreboard -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@croquet/croquet@1.0.5"></script>
+  <script type="module" src="model-view.js"></script> -->
+  <script src="./assets/js/football-data.js"></script>
 </body>
+
 </html>

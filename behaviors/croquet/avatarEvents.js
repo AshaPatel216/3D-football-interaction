@@ -142,3 +142,9 @@ export default {
 }
 
 /* globals Microverse */
+
+// Croquet Tutorial 3
+// Multiuser Chat
+// Croquet Studios, 2019-2021
+
+
