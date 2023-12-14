@@ -13,7 +13,49 @@
       href="./assets/css/microverse.css"
     />
     <script defer src="lib/index-3604d01d.js"></script>
+
+    <style>
+      /* Custom CSS */
+      #score-container {
+        position: absolute;
+        right: 70px;
+        top: 15px;
+        z-index: 1;
+        font-size: 14px;
+        font-weight: 400;
+        background: grey;
+        border-radius: 5px;
+        padding: 0 5px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 5px 0;
+        border-radius: 5px;
+        min-width: 200px;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 5px;
+      }
+    </style>
   </head>
 
-  <body class="no-select"></body>
+  <body class="no-select">
+    <div id="score-container" style="display: none">
+      <table id="score-table">
+        <tr class="table-heading-row">
+          <th>Name</th>
+          <th>Score</th>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>Score</td>
+        </tr>
+      </table>
+    </div>
+  </body>
 </html>

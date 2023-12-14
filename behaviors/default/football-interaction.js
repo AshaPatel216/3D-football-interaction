@@ -19,9 +19,12 @@ class FootballPawn extends PawnBehavior {
    * Move football to specific position (towards X in this method)
    */
   changeFotballPosition() {
-    
     let newXPosition = this.translation[0] + 5; // update the position
-    let newTranslation = [newXPosition, this.translation[1], this.translation[2]]; // Example: move to 5 meters along the x-axis
+    let newTranslation = [
+      newXPosition,
+      this.translation[1],
+      this.translation[2],
+    ]; // Example: move to 5 meters along the x-axis
     this.set({ translation: newTranslation }); // set new positions
 
     let playerName = this.actor
@@ -33,6 +36,7 @@ class FootballPawn extends PawnBehavior {
 
 class FootballActor extends ActorBehavior {
   setup() {
+    alert("Hello");
     this.listen("dataUpdated", "updateScore"); // subscribe the event to update score
   }
 
@@ -50,6 +54,48 @@ class FootballActor extends ActorBehavior {
       this.myObject[playerName] = 5;
     }
     console.log(this.myObject);
+    this.updateScoreTable(this.myObject);
+  }
+
+  /**
+   * Update score table
+   * @param {*} myObject stores Name & score of players
+   */
+  updateScoreTable(myObject) {
+    let mainContainer = document.getElementById("score-container");
+    mainContainer.style.display = "block";
+
+    let totalTableRow = document.querySelectorAll("table tr");
+
+    // remove all score data first except heading
+    if (totalTableRow.length > 1) {
+      for (var i = totalTableRow.length - 1; i > 0; i--) {
+        // Remove each row except the first one
+        totalTableRow[i].parentNode.removeChild(totalTableRow[i]);
+      }
+    }
+
+    let scoreTable = document.getElementById('score-table');
+
+    // loop through all objetcs stored and create table data
+    for (let key in myObject) {
+      if (myObject.hasOwnProperty(key)) {
+        // create new row
+        let row = document.createElement('tr');
+
+        //create column for name
+        let nameData = document.createElement('td'); // create <td>
+        nameData.textContent = key; // add data into it
+        row.appendChild(nameData); // append td into tr
+
+        //create column for score
+        let scoreData = document.createElement('td'); // create <td>
+        scoreData.textContent = myObject[key]; // add data into it
+        row.appendChild(scoreData); // append td into tr
+
+        scoreTable.appendChild(row); // once tr is created. append it into table
+      }
+    }
   }
 }
 
